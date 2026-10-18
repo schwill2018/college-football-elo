@@ -5245,7 +5245,7 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2016,REG,3,400869278,2016-09-17,276,2006,Marshall,Akron,Conference USA,Mid-American,fbs,fbs,0.8294317277579195,0,historical
 2016,REG,3,400869279,2016-09-17,2050,2198,Ball State,Eastern Kentucky,Mid-American,OVC,fbs,fcs,0.6595362181294459,1,historical
 2016,REG,3,400869280,2016-09-17,2429,2199,Charlotte,Eastern Michigan,Conference USA,Mid-American,fbs,fbs,0.7514080276407726,0,historical
-2016,REG,3,400869281,2016-09-17,189,2393,Bowling Green,Middle Tennessee,Mid-American,Conference USA,fbs,fbs,0.7493668335220303,0,historical
+2016,REG,3,400869281,2016-09-17,189,2393,Bowling Green,Middle Tennessee,Mid-American,Conference USA,fbs,fbs,0.7493668335220302,0,historical
 2016,REG,3,400869282,2016-09-17,2309,2405,Kent State,Monmouth,Mid-American,Big South,fbs,fcs,0.34702797231613114,1,historical
 2016,REG,3,400869283,2016-09-17,193,98,Miami (OH),Western Kentucky,Mid-American,Conference USA,fbs,fbs,0.07211643458717176,0,historical
 2016,REG,3,400869284,2016-09-17,356,2711,Illinois,Western Michigan,Big Ten,Mid-American,fbs,fbs,0.4375237275090255,0,historical
