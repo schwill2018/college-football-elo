@@ -58,6 +58,11 @@ an explicit Final/OT status. Verified flags are saved in
 `data/cfb_overtime_supplement.csv` and committed by the workflow for future runs.
 Unverified results still stop the run; offline runs never call ESPN.
 
+Online runs also check recent started games that the bulk schedule still marks
+unfinished. An individual ESPN final with matching team IDs supplies the final
+scores and overtime flag, so a delayed bulk update does not leave a finished
+game displayed as TBD. In-progress or unverified responses remain unfinished.
+
 After pushing the workflow to the default branch, open the repository's
 **Actions** tab, select **Update College Elo**, and choose **Run workflow** to
 verify the first update. The workflow requests `contents: write` for its built-in
@@ -84,7 +89,9 @@ calculations or seasonal parameter cache:
   Recorded pregame forecasts freeze at kickoff. An earlier completed game with
   no recorded forecast uses its historical pregame Elo/probability and the
   prospectively validated seasonal spread fit, labelled `Historical model`.
-  Started games with no saved forecast or final result retain blank predictions.
+  Started games with no saved forecast or final result show a `Model estimate`
+  reconstructed from ratings before kickoff. This estimate is for display only
+  and never enters the recorded-prediction archive or deployed performance.
 - The pregame archive records only future kickoffs with known start times;
   existing records cannot be replaced after kickoff.
 - Performance includes game-level results and each team's conference/division

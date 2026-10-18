@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 
 
-def portfolio_outputs(games, fit, outputs, spread_validation, archive_file, run_timestamp=None):
+def portfolio_outputs(games, fit, outputs, spread_validation, archive_file, run_timestamp=None, spread_slope=None):
     now = pd.Timestamp.now(tz="America/Chicago") if run_timestamp is None else pd.Timestamp(run_timestamp)
     now = now.tz_localize("America/Chicago") if now.tzinfo is None else now.tz_convert("America/Chicago")
     games = games.copy()
@@ -15,7 +15,7 @@ def portfolio_outputs(games, fit, outputs, spread_validation, archive_file, run_
     history = history.sort_values(["kickoff", "game_id"])
     season = fit["current_season"]
     schedule = games.loc[games.season == season].sort_values(["kickoff", "game_id"])
-    unfinished = schedule.loc[~schedule.completed & (schedule.kickoff.dt.date >= now.date())]
+    unfinished = schedule.loc[~schedule.completed & (schedule.kickoff >= now.normalize() - pd.Timedelta(days=7))]
     active = unfinished.iloc[0] if not unfinished.empty else schedule.iloc[-1]
     phase, week = active["game_type"], active["week"]
     weekly = schedule.loc[(schedule.game_type == phase) & (schedule.week == week)].copy()
@@ -82,6 +82,36 @@ def portfolio_outputs(games, fit, outputs, spread_validation, archive_file, run_
         weekly.loc[reconstruct, column] = weekly.loc[reconstruct, "game_id"].map(past[source])
     weekly.loc[reconstruct, "model_home_spread"] = weekly.loc[reconstruct, "game_id"].map(prior_spreads.model_home_spread)
     weekly.loc[reconstruct, "prediction_source"] = "Historical model"
+
+    # Display estimates even when recording began after kickoff. Reconstruct
+    # ratings before that kickoff rather than substituting today's postgame Elo.
+    estimate = ~weekly.completed & ~weekly.game_id.isin(saved.index)
+    if estimate.any():
+        opening, updates = {}, []
+        for game in current_history.itertuples():
+            for side in ["home", "away"]:
+                team = getattr(game, f"{side}_team")
+                opening.setdefault(team, getattr(game, f"elo_{side}_pre"))
+                updates.append((game.kickoff, team, getattr(game, f"elo_{side}_post")))
+        params = fit["K_by_year"].set_index("eval_year").loc[season]
+        seasonal_spreads = spread_validation.loc[spread_validation.season == season]
+        slope = (seasonal_spreads.spread_slope_used.iloc[0]
+                 if not seasonal_spreads.empty and "spread_slope_used" in seasonal_spreads else spread_slope)
+        if slope is None:
+            raise ValueError("A spread coefficient is required for unrecorded game estimates.")
+        for index, game in weekly.loc[estimate].iterrows():
+            pregame = {}
+            for side in ["home", "away"]:
+                team = game[f"{side}_team"]
+                earlier = [rating for kickoff, changed_team, rating in updates if changed_team == team and kickoff < game.kickoff]
+                pregame[side] = earlier[-1] if earlier else opening.get(team, fit["ratings"].get(team, 1000))
+                weekly.loc[index, f"{side}_elo"] = pregame[side]
+            advantage = 0 if game.get("location") == "Neutral" else params.home_adv_best
+            p = 1 / (1 + 10 ** ((pregame["away"] - pregame["home"] - advantage) / 400))
+            weekly.loc[index, ["p_home", "p_away"]] = [p, 1 - p]
+            protected = np.clip(p, 1e-6, 1 - 1e-6)
+            weekly.loc[index, "model_home_spread"] = -(np.round(slope * np.log(protected / (1 - protected)) * 2) / 2)
+            weekly.loc[index, "prediction_source"] = "Model estimate"
     weekly["away_rank"], weekly["home_rank"] = weekly.away_team.map(ranks), weekly.home_team.map(ranks)
     weekly["outcome"] = "TBD"
     weekly.loc[weekly.completed & (weekly.home_score > weekly.away_score), "outcome"] = weekly.home_team_name

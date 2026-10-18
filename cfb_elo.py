@@ -257,6 +257,61 @@ def fill_missing_overtime(games, supplement_file, refresh_data):
     temporary.replace(supplement_file)
 
 
+def refresh_recent_results(games, supplement_file, current_season, now=None):
+    """Check recent started games when the bulk schedule still has no final."""
+    now = pd.Timestamp.now(tz="UTC") if now is None else pd.Timestamp(now).tz_convert("UTC")
+    kickoff = pd.to_datetime(games["start_date"], utc=True, format="mixed", errors="coerce")
+    pending = games.loc[(games.season == current_season) & ~games.completed &
+                        (kickoff <= now) & (kickoff >= now - pd.Timedelta(days=7))]
+    if pending.empty:
+        return
+    supplement_file = Path(supplement_file)
+    supplement = pd.read_csv(supplement_file)
+    additions = []
+    refreshed = 0
+    for index, game in pending.iterrows():
+        game_id = int(game["game_id"])
+        url = f"https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event={game_id}"
+        try:
+            with urlopen(url, timeout=30) as response:
+                competition = json.load(response)["header"]["competitions"][0]
+            status = competition["status"]["type"]
+            if status.get("completed") is not True:
+                continue
+            if (str(competition["id"]) != str(game_id) or status.get("state") != "post" or
+                    re.fullmatch(r"Final(?:[ /]+(?:\d+)?OT)?", status.get("detail", ""), re.IGNORECASE) is None):
+                raise ValueError("unverified final game ID or status")
+            competitors = {team["homeAway"]: team for team in competition["competitors"]}
+            scores = {}
+            for side in ["home", "away"]:
+                team = competitors[side]
+                if str(team["id"]) != str(int(game[f"{side}_id"])):
+                    raise ValueError("final team IDs do not match the schedule")
+                score = float(team["score"])
+                if not np.isfinite(score) or score < 0 or score != int(score):
+                    raise ValueError("invalid final score")
+                scores[side] = score
+        except Exception as exc:
+            print(f"Could not refresh game {game_id}; retaining its source status: {exc}", flush=True)
+            continue
+        games.loc[index, ["home_points", "away_points", "completed", "status"]] = [scores["home"], scores["away"], True, "STATUS_FINAL"]
+        for side, other in [("home", "away"), ("away", "home")]:
+            if f"{side}_winner" in games.columns:
+                games.loc[index, f"{side}_winner"] = scores[side] > scores[other]
+        overtime = int("OT" in status["detail"].upper())
+        if game_id in supplement.game_id.values:
+            supplement.loc[supplement.game_id == game_id, "overtime"] = overtime
+        else:
+            additions.append({"game_id": game_id, "overtime": overtime, "start_date": "", "source": url})
+        refreshed += 1
+    if refreshed:
+        supplement = pd.concat([supplement, pd.DataFrame(additions)], ignore_index=True)
+        temporary = supplement_file.with_suffix(".csv.tmp")
+        supplement.sort_values("game_id").to_csv(temporary, index=False)
+        temporary.replace(supplement_file)
+        print(f"Updated {refreshed} delayed final results from ESPN.", flush=True)
+
+
 def load_games(data_dir=None, refresh_data=True, schedule_season=None):
     data_dir = ROOT / "data" if data_dir is None else Path(data_dir)
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -283,6 +338,9 @@ def load_games(data_dir=None, refresh_data=True, schedule_season=None):
     games = (games.sort_values("game_id")
              .drop_duplicates(["season", "home_team", "away_team", "fixture_date"], keep="last")
              .drop(columns="fixture_date"))
+
+    if refresh_data:
+        refresh_recent_results(games, data_dir / "cfb_overtime_supplement.csv", schedule_season)
 
     overtime_file = data_dir / "cfb_schedule_master.parquet"
     if not overtime_file.exists() and not refresh_data:
@@ -681,7 +739,7 @@ def main(refresh_data=True, output_dir=None, data_dir=None, schedule_season=None
     spread_slope, spread_validation, spread_performance = fit_spreads(historical_elo)
     outputs = build_projections(games, cfb_elo, spread_slope, as_of_date)
     outputs = portfolio_outputs(games, cfb_elo, outputs, spread_validation,
-                                output_dir / "historical_predictions.csv")
+                                output_dir / "historical_predictions.csv", spread_slope=spread_slope)
     evaluation = historical_elo.query("home_score != away_score").copy()
     evaluation["actual"] = (evaluation["home_score"] > evaluation["away_score"]).astype(int)
     evaluation["correct"] = (evaluation["p_home"] >= 0.5) == evaluation["actual"]

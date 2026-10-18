@@ -33,7 +33,9 @@ class SiteDataTests(unittest.TestCase):
         history["elo_home_pre"], history["elo_away_pre"] = 1100., 900.
         history["elo_home_post"], history["elo_away_post"] = 1110., 890.
         history["p_home"], history["p_away"] = .7, .3
-        self.fit = {"current_season": 2026, "games": history}
+        self.fit = {"current_season": 2026, "games": history,
+                    "ratings": {"1": 1800., "2": 400., "3": 890.},
+                    "K_by_year": pd.DataFrame([{"eval_year": 2026, "home_adv_best": 50.}])}
         self.spreads = history.assign(model_home_spread=-7.)
         self.outputs = {"current_elo_rankings.csv": pd.DataFrame({"rank": [1, 2], "team": ["1", "2"], "team_name": ["First", "Second"], "elo": [1110., 890.]})}
         future = self.games.loc[~self.games.completed].copy()
@@ -84,3 +86,26 @@ class SiteDataTests(unittest.TestCase):
             pd.DataFrame([{"game_id": "3", "prediction_timestamp": "2026-09-08T11:00-05:00", "kickoff": "2026-09-08T10:00-05:00"}]).to_csv(path, index=False)
             with self.assertRaisesRegex(ValueError, "invalid prediction timestamp"):
                 portfolio_outputs(self.games, self.fit, copy.deepcopy(self.outputs), self.spreads, path, "2026-09-08T12:00-05:00")
+
+    def test_started_game_has_pregame_estimate_without_fabricated_record(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / ".validation", prefix="site-test-") as folder:
+            result = portfolio_outputs(self.games, self.fit, copy.deepcopy(self.outputs), self.spreads,
+                                       Path(folder) / "archive.csv", "2026-09-09T11:00-05:00", spread_slope=10.)
+            game = result["weekly_projections.csv"].set_index("game_id").loc["4"]
+            self.assertEqual(game.prediction_source, "Model estimate")
+            self.assertEqual(game.home_elo, 1110.)
+            self.assertEqual(game.away_elo, 890.)
+            self.assertAlmostEqual(game.p_home, 1 / (1 + 10 ** ((890 - 1110 - 50) / 400)))
+            self.assertEqual(game.outcome, "TBD")
+            self.assertTrue(pd.notna(game.model_home_spread))
+            self.assertNotIn("4", result["historical_predictions.csv"].game_id.tolist())
+            self.assertNotIn("4", result["performance_games.csv"].game_id.tolist())
+
+    def test_neutral_estimate_has_no_home_advantage(self):
+        games = self.games.copy()
+        games["location"] = "Neutral"
+        with tempfile.TemporaryDirectory(dir=ROOT / ".validation", prefix="site-test-") as folder:
+            result = portfolio_outputs(games, self.fit, copy.deepcopy(self.outputs), self.spreads,
+                                       Path(folder) / "archive.csv", "2026-09-09T11:00-05:00", spread_slope=10.)
+            game = result["weekly_projections.csv"].set_index("game_id").loc["4"]
+            self.assertAlmostEqual(game.p_home, 1 / (1 + 10 ** ((890 - 1110) / 400)))

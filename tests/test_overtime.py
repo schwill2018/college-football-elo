@@ -89,6 +89,37 @@ class OvertimeTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, "game IDs 123"):
                     model.fill_missing_overtime(self.games.copy(), path, False)
 
+    def test_delayed_bulk_status_gets_final_scores_and_ot_from_espn(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / ".validation", prefix="ot-test-") as folder:
+            path = self.seed(folder)
+            games = self.games.iloc[:1].copy()
+            games["completed"], games["status"] = False, "STATUS_IN_PROGRESS"
+            games["season"], games["start_date"] = 2026, "2026-10-17T17:00Z"
+            games["home_points"], games["away_points"] = 7, 3
+            competition = copy.deepcopy(self.competition)
+            competition["status"]["type"]["detail"] = "Final/2OT"
+            with patch.object(model, "urlopen", return_value=self.response(competition)):
+                model.refresh_recent_results(games, path, 2026, "2026-10-18T05:00Z")
+            self.assertTrue(games.iloc[0].completed)
+            self.assertEqual(games.iloc[0].home_points, 28)
+            self.assertEqual(games.iloc[0].away_points, 21)
+            self.assertEqual(games.iloc[0].status, "STATUS_FINAL")
+            self.assertEqual(pd.read_csv(path).set_index("game_id").loc[123, "overtime"], 1)
+
+    def test_live_result_is_not_marked_final(self):
+        with tempfile.TemporaryDirectory(dir=ROOT / ".validation", prefix="ot-test-") as folder:
+            path = self.seed(folder)
+            games = self.games.iloc[:1].copy()
+            games["completed"], games["status"] = False, "STATUS_IN_PROGRESS"
+            games["season"], games["start_date"] = 2026, "2026-10-17T17:00Z"
+            competition = copy.deepcopy(self.competition)
+            competition["status"]["type"]["completed"] = False
+            before = path.read_bytes()
+            with patch.object(model, "urlopen", return_value=self.response(competition)):
+                model.refresh_recent_results(games, path, 2026, "2026-10-18T05:00Z")
+            self.assertFalse(games.iloc[0].completed)
+            self.assertEqual(path.read_bytes(), before)
+
 
 if __name__ == "__main__":
     unittest.main()
