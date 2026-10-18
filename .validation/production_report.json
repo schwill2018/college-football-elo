@@ -1,0 +1,12 @@
+{
+  "accuracy": 0.7324750654311382,
+  "logloss": 0.523675563335924,
+  "historical_games": 14137,
+  "ranked_fbs_teams": 138,
+  "cached_seasons": 17,
+  "tuner_calls": 0,
+  "notebook_csv_parity": true,
+  "cache_unchanged": true,
+  "notebook_unchanged": true,
+  "elapsed_seconds": 8.64100000000326
+}

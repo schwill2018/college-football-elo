@@ -1,0 +1,229 @@
+{
+  "checks": [
+    "Original notebook SHA-256 unchanged",
+    "Same 60 cell types in the same order",
+    "Modeling cell 7 AST matches the original",
+    "Modeling cell 11 AST matches the original",
+    "Modeling cell 15 AST matches the original",
+    "Modeling cell 20 AST matches the original",
+    "Modeling cell 25 AST matches the original",
+    "Every code cell compiles",
+    "Exact original/adapted per-game results for MOV and home-field on/off",
+    "Overtime/tie outcome weights unchanged",
+    "Exact original/adapted expanding-window predictions, parameters and offseason projection",
+    "All 37 code cells executed in order on full real schedule history with reduced expanding grids",
+    "Every retained completed fixture has scores and binary overtime",
+    "FBS/FCS and neutral postseason fixtures included",
+    "January postseason fixtures retain the prior football season",
+    "No final scores admitted for unplayed games",
+    "Only FBS teams appear in current rankings",
+    "Real-data Elo values finite and probabilities bounded",
+    "Each Elo update conserves rating sum",
+    "Full rating population mean remains 1000",
+    "Parameters fitted strictly before each evaluation season",
+    "Neutral games use zero home advantage",
+    "Future projections include FCS opponents with finite probabilities",
+    "daily projection export written",
+    "weekly projection export written",
+    "future projection export written",
+    "No-upcoming-games case yields empty daily/weekly/future projections",
+    "Weekly projection separates regular and postseason week numbers",
+    "Data adapter contains explicit missing-OT failure guard"
+  ],
+  "cell_execution": [
+    {
+      "cell": 1,
+      "seconds": 0.003
+    },
+    {
+      "cell": 3,
+      "seconds": 5.358
+    },
+    {
+      "cell": 4,
+      "seconds": 0.004
+    },
+    {
+      "cell": 5,
+      "seconds": 0.002
+    },
+    {
+      "cell": 7,
+      "seconds": 0.007
+    },
+    {
+      "cell": 9,
+      "seconds": 0.46
+    },
+    {
+      "cell": 11,
+      "seconds": 0.002
+    },
+    {
+      "cell": 13,
+      "seconds": 0.002
+    },
+    {
+      "cell": 15,
+      "seconds": 0.003
+    },
+    {
+      "cell": 17,
+      "seconds": 1.904
+    },
+    {
+      "cell": 20,
+      "seconds": 0.002
+    },
+    {
+      "cell": 22,
+      "seconds": 100.969
+    },
+    {
+      "cell": 23,
+      "seconds": 0.008
+    },
+    {
+      "cell": 25,
+      "seconds": 0.013
+    },
+    {
+      "cell": 27,
+      "seconds": 0.001
+    },
+    {
+      "cell": 28,
+      "seconds": 71.687
+    },
+    {
+      "cell": 29,
+      "seconds": 0.038
+    },
+    {
+      "cell": 31,
+      "seconds": 0.064
+    },
+    {
+      "cell": 32,
+      "seconds": 0.002
+    },
+    {
+      "cell": 33,
+      "seconds": 0.018
+    },
+    {
+      "cell": 35,
+      "seconds": 0.002
+    },
+    {
+      "cell": 36,
+      "seconds": 75.563
+    },
+    {
+      "cell": 38,
+      "seconds": 0.13
+    },
+    {
+      "cell": 39,
+      "seconds": 0.016
+    },
+    {
+      "cell": 41,
+      "seconds": 0.036
+    },
+    {
+      "cell": 42,
+      "seconds": 0.027
+    },
+    {
+      "cell": 43,
+      "seconds": 0.001
+    },
+    {
+      "cell": 45,
+      "seconds": 56.096
+    },
+    {
+      "cell": 46,
+      "seconds": 0.027
+    },
+    {
+      "cell": 47,
+      "seconds": 0.015
+    },
+    {
+      "cell": 49,
+      "seconds": 0.39
+    },
+    {
+      "cell": 50,
+      "seconds": 0.018
+    },
+    {
+      "cell": 52,
+      "seconds": 0.01
+    },
+    {
+      "cell": 54,
+      "seconds": 0.033
+    },
+    {
+      "cell": 56,
+      "seconds": 0.169
+    },
+    {
+      "cell": 57,
+      "seconds": 0.018
+    },
+    {
+      "cell": 58,
+      "seconds": 0.0
+    }
+  ],
+  "data": {
+    "seasons": [
+      2003,
+      2026
+    ],
+    "scheduled_games": 19971,
+    "completed_games": 19541,
+    "ot_games": 813,
+    "fbs_ranked_teams": 138,
+    "source_latest_completed_kickoff": "2026-10-16 19:00:00-05:00"
+  },
+  "verification_grids": {
+    "cell_28": {
+      "K": [
+        45,
+        60
+      ],
+      "home_adv": [
+        25
+      ],
+      "carry": [
+        0.5
+      ]
+    },
+    "cells_36_45": {
+      "K": [
+        40,
+        60
+      ],
+      "home_adv": [
+        25
+      ],
+      "carry": [
+        0.5
+      ]
+    },
+    "cell_22": "full original 64-combination grid"
+  },
+  "results": {
+    "accuracy": 0.7262683344974284,
+    "logloss": 0.5632637809212342,
+    "spread_mae": 14.920757458444108,
+    "production_spread_slope": 17.376350113996534
+  },
+  "seconds": 313.37,
+  "full_delivered_grids_executed": false
+}
