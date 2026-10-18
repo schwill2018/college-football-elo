@@ -1,4 +1,8 @@
-"""Extract the saved final notebook model and seed its exact seasonal cache."""
+"""One-time initial extraction of the saved fit; not a rebuild of maintained cfb_elo.py.
+
+The production loader has since gained live ESPN overtime verification. Do not
+rerun this initializer over the maintained script or the active seasonal cache.
+"""
 import ast
 import hashlib
 import json

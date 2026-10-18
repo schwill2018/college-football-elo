@@ -8,9 +8,10 @@ College spread fitting preserves the notebook's MAE/expanding-history method.
 """
 import argparse
 import json
+import re
 from pathlib import Path
 from itertools import product
-from urllib.request import urlretrieve
+from urllib.request import urlretrieve, urlopen
 
 import numpy as np
 import pandas as pd
@@ -207,6 +208,53 @@ def tune_elo_params(all_games, seasons_tune, K_grid, home_adv_grid,
             "carry_best": best["carry"], "logloss": best["logloss"],
             "results": results}
 
+def fill_missing_overtime(games, supplement_file, refresh_data):
+    """Verify source gaps against ESPN finals; never infer regulation from a score."""
+    missing = games.loc[games["completed"] & games["overtime"].isna()]
+    if missing.empty:
+        return
+    game_ids = ", ".join(missing["game_id"].astype(str))
+    if not refresh_data:
+        raise ValueError(f"Missing completed-game overtime metadata for game IDs {game_ids}; run online to verify ESPN finals.")
+
+    supplement_file = Path(supplement_file)
+    supplement = pd.read_csv(supplement_file)
+    additions = []
+    print(f"Verifying overtime metadata for {len(missing)} completed games against ESPN finals.", flush=True)
+    for index, game in missing.iterrows():
+        game_id = int(game["game_id"])
+        url = f"https://site.api.espn.com/apis/site/v2/sports/football/college-football/summary?event={game_id}"
+        try:
+            with urlopen(url, timeout=30) as response:
+                competition = json.load(response)["header"]["competitions"][0]
+            if str(competition["id"]) != str(game_id):
+                raise ValueError("ESPN returned a different game ID")
+            status = competition["status"]["type"]
+            detail = status.get("detail", "")
+            if (status.get("completed") is not True or status.get("state") != "post" or
+                    re.fullmatch(r"Final(?:[ /]+(?:\d+)?OT)?", detail, re.IGNORECASE) is None):
+                raise ValueError(f"ESPN has no verified final overtime status: {detail!r}")
+            competitors = {team["homeAway"]: team for team in competition["competitors"]}
+            for side in ["home", "away"]:
+                team = competitors[side]
+                if str(team["id"]) != str(int(game[f"{side}_id"])):
+                    raise ValueError(f"ESPN {side} team does not match the schedule")
+                if float(team["score"]) != float(game[f"{side}_points"]):
+                    raise ValueError(f"ESPN {side} final score does not match the schedule")
+            overtime = int("OT" in detail.upper())
+        except Exception as exc:
+            raise ValueError(f"Cannot verify completed game {game_id} ({game['away_team']} at {game['home_team']}): {exc}. Retry when the sources agree.") from exc
+        games.loc[index, "overtime"] = overtime
+        additions.append({"game_id": game_id, "overtime": overtime, "start_date": "", "source": url})
+
+    # Keep historical kickoff corrections; new entries supply only the verified OT flag.
+    supplement = pd.concat([supplement, pd.DataFrame(additions)], ignore_index=True)
+    supplement = supplement.drop_duplicates("game_id", keep="last").sort_values("game_id")
+    temporary = supplement_file.with_suffix(".csv.tmp")
+    supplement.to_csv(temporary, index=False)
+    temporary.replace(supplement_file)
+
+
 def load_games(data_dir=None, refresh_data=True, schedule_season=None):
     data_dir = ROOT / "data" if data_dir is None else Path(data_dir)
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -250,8 +298,7 @@ def load_games(data_dir=None, refresh_data=True, schedule_season=None):
     games["overtime"] = games["game_id"].map(overtime).fillna(
         games["game_id"].map(overtime_supplement["overtime"]))
     games["start_date"] = games["game_id"].map(overtime_supplement["start_date"]).fillna(games["start_date"])
-    if games.loc[games["completed"], "overtime"].isna().any():
-        raise ValueError("Missing completed-game overtime metadata; refresh the schedule master before fitting.")
+    fill_missing_overtime(games, data_dir / "cfb_overtime_supplement.csv", refresh_data)
 
     games = games.rename(columns={"home_team": "home_team_name", "away_team": "away_team_name",
                                   "home_points": "home_score", "away_points": "away_score"})

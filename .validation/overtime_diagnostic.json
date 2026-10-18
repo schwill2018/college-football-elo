@@ -1,0 +1,182 @@
+[
+  {
+    "game_id": 401856722,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "13",
+      "away": "21"
+    }
+  },
+  {
+    "game_id": 401856726,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "21",
+      "away": "31"
+    }
+  },
+  {
+    "game_id": 401856832,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "6",
+      "away": "17"
+    }
+  },
+  {
+    "game_id": 401858262,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "34",
+      "away": "7"
+    }
+  },
+  {
+    "game_id": 401858494,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "17",
+      "away": "7"
+    }
+  },
+  {
+    "game_id": 401860903,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "48",
+      "away": "30"
+    }
+  },
+  {
+    "game_id": 401862806,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "29",
+      "away": "2"
+    }
+  },
+  {
+    "game_id": 401864520,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "31",
+      "away": "17"
+    }
+  },
+  {
+    "game_id": 401869934,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "13",
+      "away": "23"
+    }
+  },
+  {
+    "game_id": 401869966,
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "scores": {
+      "home": "33",
+      "away": "6"
+    }
+  }
+]

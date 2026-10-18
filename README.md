@@ -51,6 +51,13 @@ dependencies, runs the cache tests, updates the model, and commits the output
 CSVs and seasonal cache to the default branch. Overlapping runs are serialized;
 failed tests or model runs do not commit outputs.
 
+The bulk schedule and overtime metadata can update at different times. If a
+completed game's overtime flag is missing, online runs check its individual ESPN
+summary and require a final result, matching game/team IDs, matching scores, and
+an explicit Final/OT status. Verified flags are saved in
+`data/cfb_overtime_supplement.csv` and committed by the workflow for future runs.
+Unverified results still stop the run; offline runs never call ESPN.
+
 After pushing the workflow to the default branch, open the repository's
 **Actions** tab, select **Update College Elo**, and choose **Run workflow** to
 verify the first update. The workflow requests `contents: write` for its built-in
