@@ -1,0 +1,29 @@
+{
+  "checks": [
+    "Portfolio daily update follows model daily update",
+    "Both Elo updater workflows trigger deployment",
+    "Model workflow preserves pregame archive and performance output",
+    "Portfolio workflow runs updater on published branch",
+    "Model and site copy validate: current_elo_rankings.csv",
+    "Model and site copy validate: weekly_projections.csv",
+    "Model and site copy validate: performance_games.csv",
+    "FBS ELO tab metadata",
+    "FBS ELO links to full CSV",
+    "FBS ELO Performance tab metadata",
+    "FBS ELO Performance links to full CSV",
+    "Elo and tuning formulas still match notebook",
+    "Top-50 games retain lower-ranked or FCS opponent forecasts"
+  ],
+  "fbs_teams": 138,
+  "weekly_games": 62,
+  "performance_games": 13679,
+  "browser_checks": [
+    "25 rows per page",
+    "next page begins at rank 26",
+    "Elo ascending sorts all 138 teams",
+    "top-25 game filter",
+    "2024 SEC metrics",
+    "honest empty recorded-performance state",
+    "no browser console errors"
+  ]
+}

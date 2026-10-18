@@ -50,6 +50,8 @@ jobs:
             daily_projections.csv \
             weekly_projections.csv \
             future_projections.csv \
+            historical_predictions.csv \
+            performance_games.csv \
             cfb_elo_history.csv \
             performance_by_year.csv \
             spread_performance_by_year.csv

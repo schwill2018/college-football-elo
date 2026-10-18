@@ -71,12 +71,30 @@ all completed model history. These inexpensive scalar fits run each time; the
 expensive Elo grid search is cached. NFL's five-season RMSE method is not substituted.
 
 The script writes the existing four ranking/projection CSVs, plus
-`cfb_elo_history.csv`, `performance_by_year.csv`, and
-`spread_performance_by_year.csv`. Projections also include `game_id` for stable
-identification. Historical output retains the source's conference fields.
-Weekly projections currently follow the notebook's upcoming-game selection;
-website filtering, completed-game display, and deployed-prediction archiving
-remain for the next implementation step.
+`cfb_elo_history.csv`, `performance_by_year.csv`,
+`spread_performance_by_year.csv`, `historical_predictions.csv`, and
+`performance_games.csv`. Projections include `game_id` for stable identification.
+
+`cfb_site_data.py` prepares the portfolio exports without changing the model's
+calculations or seasonal parameter cache:
+
+- Rankings include conference, last-game Elo change, and rank movement since the
+  start of the current regular/postseason week.
+- The weekly export contains the full week, including results and forecasts.
+  Recorded pregame forecasts freeze at kickoff. An earlier completed game with
+  no recorded forecast uses its historical pregame Elo/probability and the
+  prospectively validated seasonal spread fit, labelled `Historical model`.
+  Started games with no saved forecast or final result retain blank predictions.
+- The pregame archive records only future kickoffs with known start times;
+  existing records cannot be replaced after kickoff.
+- Performance includes game-level results and each team's conference/division
+  in that season. Prior seasons are `historical`; the current season includes
+  only completed games with forecasts actually recorded before kickoff as
+  `deployed`. Historical reconstructions never count as recorded predictions.
+
+The workflow saves both the archive and performance export after each run. The
+portfolio's updater consumes rankings, weekly games, and performance CSVs; page
+sorting, pagination, and the top-25/top-50 display filter do not limit ratings.
 
 ## Verification
 
@@ -85,5 +103,7 @@ python -m unittest discover -s tests -v
 python .validation/verify_production.py
 ```
 
-The second command uses a temporary output folder, disables downloads and tuning,
-and compares the cached replay against the saved notebook CSVs and metrics.
+The notebook snapshot comparison is specific to the original saved data and
+metrics; refreshed source files and the expanded weekly export differ by design.
+The unit tests cover cache reuse, overtime verification, pregame forecast
+freezing, recorded-performance eligibility, FCS opponents, and postseason weeks.

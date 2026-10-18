@@ -17,6 +17,8 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import minimize_scalar
 
+from cfb_site_data import portfolio_outputs
+
 ROOT = Path(__file__).resolve().parent
 K_GRID = [47, 50, 53, 56]
 HOME_ADV_GRID = [67, 70, 73, 76]
@@ -678,6 +680,8 @@ def main(refresh_data=True, output_dir=None, data_dir=None, schedule_season=None
     historical_elo = cfb_elo["games"]
     spread_slope, spread_validation, spread_performance = fit_spreads(historical_elo)
     outputs = build_projections(games, cfb_elo, spread_slope, as_of_date)
+    outputs = portfolio_outputs(games, cfb_elo, outputs, spread_validation,
+                                output_dir / "historical_predictions.csv")
     evaluation = historical_elo.query("home_score != away_score").copy()
     evaluation["actual"] = (evaluation["home_score"] > evaluation["away_score"]).astype(int)
     evaluation["correct"] = (evaluation["p_home"] >= 0.5) == evaluation["actual"]
