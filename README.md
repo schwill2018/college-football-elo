@@ -39,10 +39,22 @@ and a fully cached run does not rewrite the cache. A missing season is tuned
 once on prior seasons and checkpointed to the CSV. Incompatible settings or a
 malformed cache raise an error rather than silently refitting it.
 
-For future GitHub Actions use, include this CSV with the script and preserve
-newly added rows between runs, as with the NFL model. No workflow or publication
-is configured in this step. Back up the cache before deliberately removing
+GitHub Actions checks out this CSV with the script and commits newly added rows
+after a successful model run. Back up the cache before deliberately removing
 rows to retune; changing settings requires an explicit compatible cache rebuild.
+
+## Automatic updates
+
+`.github/workflows/cfb_elo.yml` runs daily at 08:00 UTC (3 a.m. Chicago daylight
+time / 2 a.m. standard time) and supports manual runs. It installs the Python
+dependencies, runs the cache tests, updates the model, and commits the output
+CSVs and seasonal cache to the default branch. Overlapping runs are serialized;
+failed tests or model runs do not commit outputs.
+
+After pushing the workflow to the default branch, open the repository's
+**Actions** tab, select **Update College Elo**, and choose **Run workflow** to
+verify the first update. The workflow requests `contents: write` for its built-in
+GitHub token; no custom API key or secret is required for this data source.
 
 ## Spreads and outputs
 
