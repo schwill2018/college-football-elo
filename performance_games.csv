@@ -13678,3 +13678,6 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2025,POST,1,401769075,2026-01-08,145,2390,Ole Miss,Miami,SEC,ACC,fbs,fbs,0.6016389950774794,0,historical
 2025,POST,1,401769074,2026-01-09,84,2483,Indiana,Oregon,Big Ten,Big Ten,fbs,fbs,0.41396909582462343,1,historical
 2025,POST,1,401769076,2026-01-19,84,2390,Indiana,Miami,Big Ten,ACC,fbs,fbs,0.6120021122610085,1,historical
+2026,REG,8,401871055,2026-10-20,2229,2393,Florida International,Middle Tennessee,Conference USA,Conference USA,fbs,fbs,0.7636748903650226,0,deployed
+2026,REG,8,401871069,2026-10-20,48,2623,Delaware,Missouri State,Conference USA,Conference USA,fbs,fbs,0.6320796098609316,1,deployed
+2026,REG,8,401871092,2026-10-20,276,6,Marshall,South Alabama,Sun Belt,Sun Belt,fbs,fbs,0.6053374348614757,1,deployed
