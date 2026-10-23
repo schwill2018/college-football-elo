@@ -13682,3 +13682,6 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,8,401871069,2026-10-20,48,2623,Delaware,Missouri State,Conference USA,Conference USA,fbs,fbs,0.6320796098609316,1,deployed
 2026,REG,8,401871092,2026-10-20,276,6,Marshall,South Alabama,Sun Belt,Sun Belt,fbs,fbs,0.6053374348614757,1,deployed
 2026,REG,8,401871070,2026-10-21,2534,166,Sam Houston,New Mexico State,Conference USA,Conference USA,fbs,fbs,0.4781726315802682,0,deployed
+2026,REG,8,401862807,2026-10-22,235,151,Memphis,East Carolina,American Athletic,American Athletic,fbs,fbs,0.6381219799289458,1,deployed
+2026,REG,8,401869845,2026-10-22,2026,256,App State,James Madison,Sun Belt,Sun Belt,fbs,fbs,0.1545805745183896,1,deployed
+2026,REG,8,401871056,2026-10-22,338,2335,Kennesaw State,Liberty,Conference USA,Conference USA,fbs,fbs,0.39848914580677397,0,deployed
