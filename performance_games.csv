@@ -13685,3 +13685,8 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,8,401862807,2026-10-22,235,151,Memphis,East Carolina,American Athletic,American Athletic,fbs,fbs,0.6381219799289458,1,deployed
 2026,REG,8,401869845,2026-10-22,2026,256,App State,James Madison,Sun Belt,Sun Belt,fbs,fbs,0.1545805745183896,1,deployed
 2026,REG,8,401871056,2026-10-22,338,2335,Kennesaw State,Liberty,Conference USA,Conference USA,fbs,fbs,0.39848914580677397,0,deployed
+2026,REG,8,401858271,2026-10-23,258,150,Virginia,Duke,ACC,ACC,fbs,fbs,0.4820616513934596,0,deployed
+2026,REG,8,401858272,2026-10-23,24,152,Stanford,NC State,ACC,ACC,fbs,fbs,0.40207437917009203,1,deployed
+2026,REG,8,401861965,2026-10-23,41,113,UConn,Massachusetts,FBS Independents,Mid-American,fbs,fbs,0.8712525894326877,1,deployed
+2026,REG,8,401862808,2026-10-23,202,349,Tulsa,Army,American Athletic,American Athletic,fbs,fbs,0.27670895160599446,0,deployed
+2026,REG,8,401864525,2026-10-23,2751,2005,Wyoming,Air Force,Mountain West,Mountain West,fbs,fbs,0.4050639422109585,1,deployed
