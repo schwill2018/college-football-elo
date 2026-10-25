@@ -13690,3 +13690,36 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,8,401861965,2026-10-23,41,113,UConn,Massachusetts,FBS Independents,Mid-American,fbs,fbs,0.8712525894326877,1,deployed
 2026,REG,8,401862808,2026-10-23,202,349,Tulsa,Army,American Athletic,American Athletic,fbs,fbs,0.27670895160599446,0,deployed
 2026,REG,8,401864525,2026-10-23,2751,2005,Wyoming,Air Force,Mountain West,Mountain West,fbs,fbs,0.4050639422109585,1,deployed
+2026,REG,8,401856727,2026-10-24,333,245,Alabama,Texas A&M,SEC,SEC,fbs,fbs,0.7647311919884044,1,deployed
+2026,REG,8,401856728,2026-10-24,2,99,Auburn,LSU,SEC,SEC,fbs,fbs,0.39656227680960937,0,deployed
+2026,REG,8,401856729,2026-10-24,96,238,Kentucky,Vanderbilt,SEC,SEC,fbs,fbs,0.6380143151643128,1,deployed
+2026,REG,8,401856730,2026-10-24,344,201,Mississippi State,Oklahoma,SEC,SEC,fbs,fbs,0.3813035087272357,0,deployed
+2026,REG,8,401856731,2026-10-24,2579,2633,South Carolina,Tennessee,SEC,SEC,fbs,fbs,0.34050425230329606,1,deployed
+2026,REG,8,401856732,2026-10-24,251,145,Texas,Ole Miss,SEC,SEC,fbs,fbs,0.5281843387270343,1,deployed
+2026,REG,8,401856841,2026-10-24,2628,277,TCU,West Virginia,Big 12,Big 12,fbs,fbs,0.7946440330066394,0,deployed
+2026,REG,8,401858270,2026-10-24,2567,25,SMU,California,ACC,ACC,fbs,fbs,0.8994861732357465,1,deployed
+2026,REG,8,401858273,2026-10-24,59,103,Georgia Tech,Boston College,ACC,ACC,fbs,fbs,0.7082109221606442,0,deployed
+2026,REG,8,401858274,2026-10-24,2390,221,Miami,Pittsburgh,ACC,ACC,fbs,fbs,0.8869851399525343,1,deployed
+2026,REG,8,401858275,2026-10-24,153,183,North Carolina,Syracuse,ACC,ACC,fbs,fbs,0.7714275077162425,0,deployed
+2026,REG,8,401858496,2026-10-24,130,84,Michigan,Indiana,Big Ten,Big Ten,fbs,fbs,0.32366124968191506,0,deployed
+2026,REG,8,401858498,2026-10-24,77,164,Northwestern,Rutgers,Big Ten,Big Ten,fbs,fbs,0.7985372392624003,1,deployed
+2026,REG,8,401858500,2026-10-24,275,30,Wisconsin,USC,Big Ten,Big Ten,fbs,fbs,0.31551469693356,1,deployed
+2026,REG,8,401860905,2026-10-24,36,21,Colorado State,San Diego State,Pac-12,Pac-12,fbs,fbs,0.36924894560937477,1,deployed
+2026,REG,8,401860906,2026-10-24,326,328,Texas State,Utah State,Pac-12,Pac-12,fbs,fbs,0.7845924683628471,1,deployed
+2026,REG,8,401860907,2026-10-24,265,68,Washington State,Boise State,Pac-12,Pac-12,fbs,fbs,0.24636518024639764,0,deployed
+2026,REG,8,401862809,2026-10-24,2226,242,Florida Atlantic,Rice,American Athletic,American Athletic,fbs,fbs,0.7564438284596282,1,deployed
+2026,REG,8,401862810,2026-10-24,2426,249,Navy,North Texas,American Athletic,American Athletic,fbs,fbs,0.5341712072458538,0,deployed
+2026,REG,8,401862811,2026-10-24,2655,2636,Tulane,UTSA,American Athletic,American Athletic,fbs,fbs,0.6070108082465027,0,deployed
+2026,REG,8,401864526,2026-10-24,2459,62,Northern Illinois,Hawai'i,Mountain West,Mountain West,fbs,fbs,0.4069704730119596,0,deployed
+2026,REG,8,401864527,2026-10-24,167,2449,New Mexico,North Dakota State,Mountain West,Mountain West,fbs,fbs,0.6348268562835924,1,deployed
+2026,REG,8,401864528,2026-10-24,2440,23,Nevada,San José State,Mountain West,Mountain West,fbs,fbs,0.5002839523814864,1,deployed
+2026,REG,8,401866446,2026-10-24,2309,2006,Kent State,Akron,Mid-American,Mid-American,fbs,fbs,0.5923228326396969,1,deployed
+2026,REG,8,401866447,2026-10-24,2050,16,Ball State,Sacramento State,Mid-American,Mid-American,fbs,fbs,0.607932140909111,1,deployed
+2026,REG,8,401866448,2026-10-24,2084,189,Buffalo,Bowling Green,Mid-American,Mid-American,fbs,fbs,0.6971479988903254,1,deployed
+2026,REG,8,401866449,2026-10-24,195,2199,Ohio,Eastern Michigan,Mid-American,Mid-American,fbs,fbs,0.8585933138939962,1,deployed
+2026,REG,8,401866450,2026-10-24,2649,2711,Toledo,Western Michigan,Mid-American,Mid-American,fbs,fbs,0.5514060530769603,1,deployed
+2026,REG,8,401866476,2026-10-24,2117,193,Central Michigan,Miami (OH),Mid-American,Mid-American,fbs,fbs,0.4566697906119356,0,deployed
+2026,REG,8,401869935,2026-10-24,2032,2247,Arkansas State,Georgia State,Sun Belt,Sun Belt,fbs,fbs,0.6437887449259252,1,deployed
+2026,REG,8,401869967,2026-10-24,2572,309,Southern Miss,Louisiana,Sun Belt,Sun Belt,fbs,fbs,0.2852535372027563,1,deployed
+2026,REG,8,401871093,2026-10-24,2348,295,Louisiana Tech,Old Dominion,Sun Belt,Sun Belt,fbs,fbs,0.5805158761731967,1,deployed
+2026,REG,8,401871094,2026-10-24,2653,2433,Troy,UL Monroe,Sun Belt,Sun Belt,fbs,fbs,0.8809035092983649,0,deployed
