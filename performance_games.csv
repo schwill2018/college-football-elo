@@ -13725,3 +13725,5 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,8,401871094,2026-10-24,2653,2433,Troy,UL Monroe,Sun Belt,Sun Belt,fbs,fbs,0.8809035092983649,0,deployed
 2026,REG,9,401871071,2026-10-27,98,48,Western Kentucky,Delaware,Conference USA,Conference USA,fbs,fbs,0.6667510279066116,0,deployed
 2026,REG,9,401871072,2026-10-27,2623,2534,Missouri State,Sam Houston,Conference USA,Conference USA,fbs,fbs,0.727460289888783,1,deployed
+2026,REG,9,401871057,2026-10-28,166,55,New Mexico State,Jacksonville State,Conference USA,Conference USA,fbs,fbs,0.34795815260475277,0,deployed
+2026,REG,9,401871058,2026-10-28,2393,338,Middle Tennessee,Kennesaw State,Conference USA,Conference USA,fbs,fbs,0.5198365299959438,0,deployed
