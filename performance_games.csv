@@ -13729,3 +13729,6 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,9,401871058,2026-10-28,2393,338,Middle Tennessee,Kennesaw State,Conference USA,Conference USA,fbs,fbs,0.5198365299959438,0,deployed
 2026,REG,9,401862812,2026-10-29,249,2226,North Texas,Florida Atlantic,American Athletic,American Athletic,fbs,fbs,0.8389439668254461,1,deployed
 2026,REG,9,401869963,2026-10-29,256,2653,James Madison,Troy,Sun Belt,Sun Belt,fbs,fbs,0.9269913805557369,0,deployed
+2026,REG,9,401856844,2026-10-30,2116,239,UCF,Baylor,Big 12,Big 12,fbs,fbs,0.4987272989590581,0,deployed
+2026,REG,9,401862813,2026-10-30,2429,2655,Charlotte,Tulane,American Athletic,American Athletic,fbs,fbs,0.1324655258047935,0,deployed
+2026,REG,9,401866451,2026-10-30,16,2309,Sacramento State,Kent State,Mid-American,Mid-American,fbs,fbs,0.4967152289322489,1,deployed
