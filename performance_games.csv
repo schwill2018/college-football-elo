@@ -13781,3 +13781,6 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,9,401871097,2026-10-31,6,2348,South Alabama,Louisiana Tech,Sun Belt,Sun Belt,fbs,fbs,0.5426227526521393,0,deployed
 2026,REG,10,401866453,2026-11-03,2006,195,Akron,Ohio,Mid-American,Mid-American,fbs,fbs,0.15030062425588206,0,deployed
 2026,REG,10,401866454,2026-11-03,193,2084,Miami (OH),Buffalo,Mid-American,Mid-American,fbs,fbs,0.6689298748765876,0,deployed
+2026,REG,10,401866455,2026-11-04,113,2050,Massachusetts,Ball State,Mid-American,Mid-American,fbs,fbs,0.571173779295099,1,deployed
+2026,REG,10,401866456,2026-11-04,2199,2117,Eastern Michigan,Central Michigan,Mid-American,Mid-American,fbs,fbs,0.4709016668057049,0,deployed
+2026,REG,10,401866457,2026-11-04,16,2649,Sacramento State,Toledo,Mid-American,Mid-American,fbs,fbs,0.19767120471231542,0,deployed
