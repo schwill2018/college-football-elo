@@ -13791,3 +13791,54 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,10,401858510,2026-11-06,356,158,Illinois,Nebraska,Big Ten,Big Ten,fbs,fbs,0.6515790733602077,1,deployed
 2026,REG,10,401862818,2026-11-06,151,58,East Carolina,South Florida,American Athletic,American Athletic,fbs,fbs,0.5565896412433196,1,deployed
 2026,REG,10,401864533,2026-11-06,2440,167,Nevada,New Mexico,Mountain West,Mountain West,fbs,fbs,0.2401090967185268,0,deployed
+2026,REG,10,401856738,2026-11-07,2,8,Auburn,Arkansas,SEC,SEC,fbs,fbs,0.6795477496824374,1,deployed
+2026,REG,10,401856739,2026-11-07,57,201,Florida,Oklahoma,SEC,SEC,fbs,fbs,0.5241256536400709,0,deployed
+2026,REG,10,401856740,2026-11-07,99,333,LSU,Alabama,SEC,SEC,fbs,fbs,0.49970812698877565,0,deployed
+2026,REG,10,401856741,2026-11-07,145,61,Ole Miss,Georgia,SEC,SEC,fbs,fbs,0.4723249799746889,0,deployed
+2026,REG,10,401856742,2026-11-07,344,238,Mississippi State,Vanderbilt,SEC,SEC,fbs,fbs,0.5115690180349584,0,deployed
+2026,REG,10,401856743,2026-11-07,142,251,Missouri,Texas,SEC,SEC,fbs,fbs,0.41999544888598783,0,deployed
+2026,REG,10,401856744,2026-11-07,2579,245,South Carolina,Texas A&M,SEC,SEC,fbs,fbs,0.5884143891631489,1,deployed
+2026,REG,10,401856745,2026-11-07,2633,96,Tennessee,Kentucky,SEC,SEC,fbs,fbs,0.7176810865172417,1,deployed
+2026,REG,10,401856849,2026-11-07,254,252,Utah,BYU,Big 12,Big 12,fbs,fbs,0.6465595962732408,1,deployed
+2026,REG,10,401856850,2026-11-07,2305,2116,Kansas,UCF,Big 12,Big 12,fbs,fbs,0.6315876682602769,0,deployed
+2026,REG,10,401856851,2026-11-07,248,2132,Houston,Cincinnati,Big 12,Big 12,fbs,fbs,0.7131002730510654,1,deployed
+2026,REG,10,401856852,2026-11-07,9,38,Arizona State,Colorado,Big 12,Big 12,fbs,fbs,0.8064380327075282,1,deployed
+2026,REG,10,401856853,2026-11-07,239,66,Baylor,Iowa State,Big 12,Big 12,fbs,fbs,0.5938839325175865,1,deployed
+2026,REG,10,401856854,2026-11-07,2306,197,Kansas State,Oklahoma State,Big 12,Big 12,fbs,fbs,0.7559190467508391,0,deployed
+2026,REG,10,401856856,2026-11-07,2641,277,Texas Tech,West Virginia,Big 12,Big 12,fbs,fbs,0.8754285553408548,1,deployed
+2026,REG,10,401858285,2026-11-07,183,228,Syracuse,Clemson,ACC,ACC,fbs,fbs,0.2814184113280637,0,deployed
+2026,REG,10,401858286,2026-11-07,152,150,NC State,Duke,ACC,ACC,fbs,fbs,0.4361056578087305,0,deployed
+2026,REG,10,401858287,2026-11-07,59,97,Georgia Tech,Louisville,ACC,ACC,fbs,fbs,0.25435269655866993,0,deployed
+2026,REG,10,401858289,2026-11-07,103,52,Boston College,Florida State,ACC,ACC,fbs,fbs,0.5375711208573629,0,deployed
+2026,REG,10,401858290,2026-11-07,154,2771,Wake Forest,Merrimack,ACC,FCS Independents,fbs,fcs,0.9376617967331297,1,deployed
+2026,REG,10,401858291,2026-11-07,87,2390,Notre Dame,Miami,FBS Independents,ACC,fbs,fbs,0.6284652707248091,1,deployed
+2026,REG,10,401858292,2026-11-07,41,153,UConn,North Carolina,FBS Independents,ACC,fbs,fbs,0.5635942232649638,0,deployed
+2026,REG,10,401858511,2026-11-07,130,127,Michigan,Michigan State,Big Ten,Big Ten,fbs,fbs,0.9103332274965532,0,deployed
+2026,REG,10,401858512,2026-11-07,135,26,Minnesota,UCLA,Big Ten,Big Ten,fbs,fbs,0.5345308044050988,0,deployed
+2026,REG,10,401858513,2026-11-07,77,2294,Northwestern,Iowa,Big Ten,Big Ten,fbs,fbs,0.3860645109873014,0,deployed
+2026,REG,10,401858514,2026-11-07,194,2483,Ohio State,Oregon,Big Ten,Big Ten,fbs,fbs,0.7594763014671221,0,deployed
+2026,REG,10,401858515,2026-11-07,2509,120,Purdue,Maryland,Big Ten,Big Ten,fbs,fbs,0.6712492786373345,0,deployed
+2026,REG,10,401858516,2026-11-07,264,213,Washington,Penn State,Big Ten,Big Ten,fbs,fbs,0.6269367227768535,0,deployed
+2026,REG,10,401858517,2026-11-07,275,164,Wisconsin,Rutgers,Big Ten,Big Ten,fbs,fbs,0.7870903542243377,1,deployed
+2026,REG,10,401860911,2026-11-07,36,68,Colorado State,Boise State,Pac-12,Pac-12,fbs,fbs,0.1223162284632218,0,deployed
+2026,REG,10,401860912,2026-11-07,204,326,Oregon State,Texas State,Pac-12,Pac-12,fbs,fbs,0.47003656108886943,0,deployed
+2026,REG,10,401860913,2026-11-07,328,278,Utah State,Fresno State,Pac-12,Pac-12,fbs,fbs,0.3571347874220138,1,deployed
+2026,REG,10,401862819,2026-11-07,5,2429,UAB,Charlotte,American Athletic,American Athletic,fbs,fbs,0.8033475740679399,1,deployed
+2026,REG,10,401862820,2026-11-07,2426,218,Navy,Temple,American Athletic,American Athletic,fbs,fbs,0.8366051121969356,1,deployed
+2026,REG,10,401862821,2026-11-07,249,242,North Texas,Rice,American Athletic,American Athletic,fbs,fbs,0.9237388005194691,1,deployed
+2026,REG,10,401862822,2026-11-07,2655,202,Tulane,Tulsa,American Athletic,American Athletic,fbs,fbs,0.8410962911886907,0,deployed
+2026,REG,10,401862823,2026-11-07,349,2005,Army,Air Force,American Athletic,Mountain West,fbs,fbs,0.7117375591468162,0,deployed
+2026,REG,10,401864532,2026-11-07,2638,62,UTEP,Hawai'i,Mountain West,Mountain West,fbs,fbs,0.26538648657131375,0,deployed
+2026,REG,10,401864534,2026-11-07,23,2459,San José State,Northern Illinois,Mountain West,Mountain West,fbs,fbs,0.7665566788550132,1,deployed
+2026,REG,10,401864535,2026-11-07,2439,2751,UNLV,Wyoming,Mountain West,Mountain West,fbs,fbs,0.7997442295026329,0,deployed
+2026,REG,10,401869927,2026-11-07,2026,2247,App State,Georgia State,Sun Belt,Sun Belt,fbs,fbs,0.6992474486822067,0,deployed
+2026,REG,10,401869936,2026-11-07,2032,2433,Arkansas State,UL Monroe,Sun Belt,Sun Belt,fbs,fbs,0.8711435075415457,0,deployed
+2026,REG,10,401869945,2026-11-07,324,295,Coastal Carolina,Old Dominion,Sun Belt,Sun Belt,fbs,fbs,0.5828361314543893,0,deployed
+2026,REG,10,401869951,2026-11-07,290,276,Georgia Southern,Marshall,Sun Belt,Sun Belt,fbs,fbs,0.5844545938970563,1,deployed
+2026,REG,10,401869968,2026-11-07,309,6,Louisiana,South Alabama,Sun Belt,Sun Belt,fbs,fbs,0.6803215250308093,1,deployed
+2026,REG,10,401870795,2026-11-07,166,2335,New Mexico State,Liberty,Conference USA,Conference USA,fbs,fbs,0.2684584842732425,0,deployed
+2026,REG,10,401871073,2026-11-07,338,48,Kennesaw State,Delaware,Conference USA,Conference USA,fbs,fbs,0.5154617876562628,1,deployed
+2026,REG,10,401871074,2026-11-07,2229,2623,Florida International,Missouri State,Conference USA,Conference USA,fbs,fbs,0.6356986587210817,1,deployed
+2026,REG,10,401871075,2026-11-07,55,2534,Jacksonville State,Sam Houston,Conference USA,Conference USA,fbs,fbs,0.9108813021326343,1,deployed
+2026,REG,10,401871076,2026-11-07,2393,98,Middle Tennessee,Western Kentucky,Conference USA,Conference USA,fbs,fbs,0.3899328505981989,1,deployed
+2026,REG,10,401871098,2026-11-07,2653,2348,Troy,Louisiana Tech,Sun Belt,Sun Belt,fbs,fbs,0.45428931135990325,0,deployed
