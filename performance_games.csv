@@ -13842,3 +13842,6 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,10,401871075,2026-11-07,55,2534,Jacksonville State,Sam Houston,Conference USA,Conference USA,fbs,fbs,0.9108813021326343,1,deployed
 2026,REG,10,401871076,2026-11-07,2393,98,Middle Tennessee,Western Kentucky,Conference USA,Conference USA,fbs,fbs,0.3899328505981989,1,deployed
 2026,REG,10,401871098,2026-11-07,2653,2348,Troy,Louisiana Tech,Sun Belt,Sun Belt,fbs,fbs,0.45428931135990325,0,deployed
+2026,REG,11,401866458,2026-11-10,2006,2711,Akron,Western Michigan,Mid-American,Mid-American,fbs,fbs,0.18483499249083718,0,deployed
+2026,REG,11,401866459,2026-11-10,189,2309,Bowling Green,Kent State,Mid-American,Mid-American,fbs,fbs,0.6831727224987457,1,deployed
+2026,REG,11,401866460,2026-11-10,193,195,Miami (OH),Ohio,Mid-American,Mid-American,fbs,fbs,0.39188914702627703,1,deployed
