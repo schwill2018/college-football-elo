@@ -1,2 +1,1 @@
 as_of_date,game_id,game_type,week,gameday,gametime,away_team,home_team,away_team_name,home_team_name,away_rank,home_rank,away_elo,home_elo,p_away,p_home,elo_home_margin,model_home_spread
-2026-11-15,401856887,REG,11,2026-11-15,12:00:00,145,201,Ole Miss,Oklahoma,10.0,22,1400.0443865566008,1276.0772574305904,0.581255423401043,0.418744576598957,-3.3748589469141512,3.5
