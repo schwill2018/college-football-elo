@@ -13979,3 +13979,5 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,12,401871080,2026-11-21,2335,98,Liberty,Western Kentucky,Conference USA,Conference USA,fbs,fbs,0.7914203030186372,1,deployed
 2026,REG,12,401871081,2026-11-21,2534,2393,Sam Houston,Middle Tennessee,Conference USA,Conference USA,fbs,fbs,0.4314789781931012,0,deployed
 2026,REG,12,401871101,2026-11-21,2572,6,Southern Miss,South Alabama,Sun Belt,Sun Belt,fbs,fbs,0.4308805932186324,0,deployed
+2026,REG,13,401866470,2026-11-24,2199,2309,Eastern Michigan,Kent State,Mid-American,Mid-American,fbs,fbs,0.7089966841006915,1,deployed
+2026,REG,13,401866471,2026-11-24,2711,193,Western Michigan,Miami (OH),Mid-American,Mid-American,fbs,fbs,0.6661188410260477,0,deployed
