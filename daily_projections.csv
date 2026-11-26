@@ -1,1 +1,2 @@
 as_of_date,game_id,game_type,week,gameday,gametime,away_team,home_team,away_team_name,home_team_name,away_rank,home_rank,away_elo,home_elo,p_away,p_home,elo_home_margin,model_home_spread
+2026-11-26,401856879,REG,13,2026-11-26,19:00:00,2628,2641,TCU,Texas Tech,38,11,1191.40034034688,1390.9004615611118,0.1773948881489542,0.8226051118510458,15.78962235603885,-16.0
