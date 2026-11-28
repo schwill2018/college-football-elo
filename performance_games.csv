@@ -13982,3 +13982,16 @@ season,game_type,week,game_id,gameday,home_team,away_team,home_team_name,away_te
 2026,REG,13,401866470,2026-11-24,2199,2309,Eastern Michigan,Kent State,Mid-American,Mid-American,fbs,fbs,0.7089966841006915,1,deployed
 2026,REG,13,401866471,2026-11-24,2711,193,Western Michigan,Miami (OH),Mid-American,Mid-American,fbs,fbs,0.6661188410260477,0,deployed
 2026,REG,13,401856879,2026-11-26,2641,2628,Texas Tech,TCU,Big 12,Big 12,fbs,fbs,0.8226051118510458,1,deployed
+2026,REG,13,401856756,2026-11-27,245,251,Texas A&M,Texas,SEC,SEC,fbs,fbs,0.2262995173245166,0,deployed
+2026,REG,13,401856759,2026-11-27,52,57,Florida State,Florida,ACC,SEC,fbs,fbs,0.43613122718063085,0,deployed
+2026,REG,13,401856762,2026-11-27,145,344,Ole Miss,Mississippi State,SEC,SEC,fbs,fbs,0.9008281144730359,1,deployed
+2026,REG,13,401856880,2026-11-27,254,277,Utah,West Virginia,Big 12,Big 12,fbs,fbs,0.9431199506275075,1,deployed
+2026,REG,13,401858536,2026-11-27,2294,158,Iowa,Nebraska,Big Ten,Big Ten,fbs,fbs,0.8182847975421,1,deployed
+2026,REG,13,401858544,2026-11-27,275,135,Wisconsin,Minnesota,Big Ten,Big Ten,fbs,fbs,0.6565226226546842,1,deployed
+2026,REG,13,401862838,2026-11-27,235,218,Memphis,Temple,American Athletic,American Athletic,fbs,fbs,0.9303976095082478,0,deployed
+2026,REG,13,401862840,2026-11-27,2636,202,UTSA,Tulsa,American Athletic,American Athletic,fbs,fbs,0.7891300758362116,1,deployed
+2026,REG,13,401864546,2026-11-27,167,2005,New Mexico,Air Force,Mountain West,Mountain West,fbs,fbs,0.6988455670451501,1,deployed
+2026,REG,13,401864549,2026-11-27,23,2449,San José State,North Dakota State,Mountain West,Mountain West,fbs,fbs,0.2830036373268721,0,deployed
+2026,REG,13,401866472,2026-11-27,2006,2084,Akron,Buffalo,Mid-American,Mid-American,fbs,fbs,0.2554371329730036,0,deployed
+2026,REG,13,401866473,2026-11-27,195,2649,Ohio,Toledo,Mid-American,Mid-American,fbs,fbs,0.5963366755114995,0,deployed
+2026,REG,13,401869930,2026-11-27,6,2026,South Alabama,App State,Sun Belt,Sun Belt,fbs,fbs,0.6455114493178195,1,deployed
